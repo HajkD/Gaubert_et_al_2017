@@ -243,7 +243,30 @@ p5 <- gridExtra::grid.arrange(p1, p2, p3, p4)
 
 ```
 
+### Enrichment analysis of ONSEN insertions in euchromatic versus heterochromatic regions
 
+```r
+# compute enrichment p-value for 332 ONSEN insersions in 109 Mbp euchromatin
+# versus 6 ONSEN insertions in 16 Mbp heterochromatin
+ONSEN_insertion_enrichment <-
+        matrix(c(
+                332,
+                nrow(SlidingWindow_count_ONSEN_insertions_euchromatin),
+                6,
+                nrow(SlidingWindow_count_ONSEN_insertions_heterochromatin)
+        ),
+        nrow = 2,
+        dimnames = list(
+                c("Euchromatic Insertions", "Euchromatic Sliding Windows"),
+                c(
+                        "Heterochromatic Insertions",
+                        "Heterochromatic Sliding Windows"
+                )
+        ))
+        
+# Perform Fisher's exact test for count data
+fisher.test(ONSEN_insertion_enrichment)
+```
 
 
 
