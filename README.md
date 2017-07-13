@@ -1,6 +1,10 @@
 # Reproducible Scripts for the Publication
 Gaubert H, Sanchez DH, Drost H-G and Paszkowski J. __Developmental restriction of retrotransposition activated in Arabidopsis by environmental stress__. (2017).
 
+### Installing prerequisite command line tools
+
+### Statistical assessment of ONSEN insertion distributions
+
 ```r
 # Please install the following packages if you haven't installed them yet
 # source("http://bioconductor.org/biocLite.R")
@@ -59,7 +63,7 @@ system(
         "bedtools intersect -a Ath_partition_1Mb.bed -b Ath_heterochromatin.bed -c > Ath_partition_1Mb_heterochromatin.bed"
 )
 
-# Euchromatic regions
+# Generate 1Mbp sliding window *.bed file for euchromatic regions
 Ath_partition_1Mb_euchromatin <-
         readr::read_tsv("Ath_partition_1Mb_euchromatin.bed", col_names = FALSE)
 names(Ath_partition_1Mb_euchromatin) <-
@@ -72,10 +76,12 @@ partition2bed(
         "Ath_partition_1Mb_euchromatin_filtered.bed"
 )
 
+# count for each sliding window in euchromatin how many ONSEN insertions have been observed
 SlidingWindow_count_ONSEN_insertions_euchromatin <-
         count_overlap("Ath_partition_1Mb_euchromatin_filtered.bed",
                       "ONSEN_insertions.bed")
 
+# add ID column
 SlidingWindow_count_ONSEN_insertions_euchromatin <-
         dplyr::mutate(
                 SlidingWindow_count_ONSEN_insertions_euchromatin,
@@ -88,11 +94,12 @@ SlidingWindow_count_ONSEN_insertions_euchromatin <-
                 )
         )
 
+# remove border line sliding window that actually corresponds to heterochromatic regions
 SlidingWindow_count_ONSEN_insertions_euchromatin <-
         dplyr::filter(SlidingWindow_count_ONSEN_insertions_euchromatin,
                       ID != "Chr4_2000001_3000000")
 
-# visualize new ONSEN insertion distribution
+# visualize ONSEN insertion count distribution in euchromatin
 p1 <-
         plotOverlapCounts(
                 SlidingWindow_count_ONSEN_insertions_euchromatin,
@@ -100,7 +107,8 @@ p1 <-
                 main = "ONSEN insertion counts in euchromatic loci (332 out of 338 insertions)",
                 with_facet = FALSE
         )
-
+        
+# count for each sliding window in euchromatin how many random insertions have been observed
 SlidingWindow_count_random_ONSEN_insertions_euchromatin <-
         count_overlap("Ath_partition_1Mb_euchromatin_filtered.bed",
                       "Ath_random_insertions.bed")
@@ -115,7 +123,7 @@ p2 <-
                 with_facet = FALSE
         )
 
-
+# compute variance across random insertion counts in euchromatin (1000 times independently) 
 Random_vars_1000_euchromatin <- random_insertion_vars(
         geneome          = Ath_genome_seq_chr,
         insertion_data   = ONSEN_insertions,
@@ -123,10 +131,10 @@ Random_vars_1000_euchromatin <- random_insertion_vars(
         iterations       = 1000,
         chr_separately = FALSE
 )
-
+# compute the real variance 
 true_vars_euchromatin <-
         tibble::tibble(vars = var(
-                SlidingWindow_count_random_ONSEN_insertions_euchromatin$count
+                SlidingWindow_count_ONSEN_insertions_euchromatin$count
         ))
 
 # visualise
@@ -136,7 +144,7 @@ plotRandomVars(Random_vars_1000_euchromatin,
 
 gamma_p_vals(Random_vars_1000_euchromatin$vars,
              true_vars_euchromatin$vars)
-# [1] 0.2203609
+# [1] 1.012103e-06
 
 
 
@@ -214,7 +222,7 @@ Random_vars_1000_heterochromatin <- random_insertion_vars(
 
 true_vars_heterochromatin <-
         tibble::tibble(vars = var(
-                SlidingWindow_count_random_ONSEN_insertions_heterochromatin$count
+                SlidingWindow_count_ONSEN_insertions_heterochromatin$count
         ))
 
 # visualise
@@ -227,6 +235,7 @@ gamma_p_vals(
         true_vars_heterochromatin$vars,
         lower.tail = TRUE
 )
+# [1] 0.0003850615
 
 
 p5 <- gridExtra::grid.arrange(p1, p2, p3, p4)
