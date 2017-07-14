@@ -3,6 +3,9 @@ Gaubert H, Sanchez DH, Drost H-G and Paszkowski J. __Developmental restriction o
 
 ### Installing prerequisite command line tools
 
+- [bedtools v2.26.0](http://bedtools.readthedocs.io/en/latest/content/installation.html)
+- [bedops v2.4.26](https://github.com/bedops/bedops/releases)
+
 ### Statistical assessment of ONSEN insertion distributions
 
 ```r
@@ -246,7 +249,7 @@ p5 <- gridExtra::grid.arrange(p1, p2, p3, p4)
 ### Enrichment analysis of ONSEN insertions in euchromatic versus heterochromatic regions
 
 ```r
-# compute enrichment p-value for 332 ONSEN insersions in 109 Mbp euchromatin
+# compute enrichment p-value for 332 ONSEN insertions in 109 Mbp euchromatin
 # versus 6 ONSEN insertions in 16 Mbp heterochromatin
 ONSEN_insertion_enrichment <-
         matrix(c(
@@ -266,6 +269,58 @@ ONSEN_insertion_enrichment <-
         
 # Perform Fisher's exact test for count data
 fisher.test(ONSEN_insertion_enrichment)
+```
+
+### Preferential targeting of genes with functional enrichment in defense response analysis
+
+```r
+# retrieve A. thaliana GFF file
+biomartr::getGFF(organism = "Arabidopsis thaliana", db = "ensemblgenomes")
+
+# download bedops v2.4.26 https://github.com/bedops/bedops/releases
+system(
+        "gff2bed < _ncbi_downloads/annotation/Arabidopsis_thaliana.TAIR10.36_ensemblgenomes.gff3 > Arabidopsis_thaliana.TAIR10.36_ensemblgenomes.bed"
+)
+
+# http://bedops.readthedocs.io/en/latest/content/reference/file-management/conversion/gff2bed.html
+Ath_bed <-
+        readr::read_tsv("Arabidopsis_thaliana.TAIR10.36_ensemblgenomes.bed",
+                        col_names = FALSE)
+names(Ath_bed) <-
+        c("chr",
+          "start",
+          "end",
+          "id",
+          "score",
+          "strand",
+          "source",
+          "type",
+          "phase",
+          "attributes")
+
+Ath_bed_genes <- dplyr::filter(Ath_bed, type == "gene")
+Ath_bed_genes <-
+        dplyr::mutate(Ath_bed_genes,
+                      id = stringr::str_replace(Ath_bed_genes$id, "gene:", ""))
+
+Ath_bed_genes <-
+        dplyr::mutate(Ath_bed_genes, width = end - start + 1L)
+
+names(Ath_bed_genes) <-
+        c(
+                "chr",
+                "start",
+                "end",
+                "gene",
+                "score",
+                "strand",
+                "source",
+                "type",
+                "phase",
+                "attributes",
+                "width"
+        )
+
 ```
 
 
