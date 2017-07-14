@@ -1,0 +1,33 @@
+ARATH|TAIR=AT5G45240|UniProtKB=F4KD49	AT5G45240	TIR-NBS-LRR class disease resistance protein;At5g45240;ortholog			Arabidopsis thaliana
+ARATH|TAIR=AT2G37040|UniProtKB=P35510	AT2G37040	Phenylalanine ammonia-lyase 1;PAL1;ortholog	Histidine ammonia-lyase (PTHR10362:SF7)		Arabidopsis thaliana
+ARATH|TAIR=AT5G45200|UniProtKB=F4KD45	AT5G45200	TIR-NBS-LRR class disease resistance protein;At5g45200;ortholog	ATP binding protein-related (PTHR43904:SF1)		Arabidopsis thaliana
+ARATH|TAIR=AT2G23220|UniProtKB=O22185	AT2G23220	Cytochrome P450, family 81, subfamily D, polypeptide 6;CYP81D6;ortholog	Cytochrome P450 81D1-related (PTHR24298:SF205)	oxygenase(PC00177)	Arabidopsis thaliana
+ARATH|TAIR=AT3G51560|UniProtKB=Q9SCZ3	AT3G51560	Disease resistance-like protein;F26O13.200;ortholog	Disease resistance-like protein-related (PTHR32096:SF54)		Arabidopsis thaliana
+ARATH|TAIR=AT1G66090|UniProtKB=Q9C515	AT1G66090	Disease resistance protein, putative;F15E12.17;ortholog	resistance protein, putative-related (PTHR44577:SF1)		Arabidopsis thaliana
+ARATH|TAIR=AT5G45000|UniProtKB=Q56XU3	AT5G45000	Putative uncharacterized protein At5g45000;At5g45000;ortholog	Protein PHLOEM PROTEIN 2-LIKE A5-related (PTHR32009:SF34)		Arabidopsis thaliana
+ARATH|TAIR=AT5G17970|UniProtKB=Q9FJG4	AT5G17970	Disease resistance protein;At5g17970;ortholog	ATP binding protein-related (PTHR43904:SF1)		Arabidopsis thaliana
+ARATH|TAIR=AT2G22330|UniProtKB=Q501D8	AT2G22330	Tryptophan N-monooxygenase 2;CYP79B3;ortholog	Cytochrome P450, family 79, subfamily C, polypeptide 1-related (PTHR24298:SF1)	oxygenase(PC00177)	Arabidopsis thaliana
+ARATH|TAIR=AT3G52400|UniProtKB=Q9SVC2	AT3G52400	Syntaxin-122;SYP122;ortholog	Syntaxin-121-related (PTHR19957:SF69)	SNARE protein(PC00034)	Arabidopsis thaliana
+ARATH|TAIR=AT5G16000|UniProtKB=Q9LFS4	AT5G16000	Protein NSP-INTERACTING KINASE 1;NIK1;ortholog	Protein NSP-INTERACTING KINASE 1 (PTHR27001:SF220)		Arabidopsis thaliana
+ARATH|TAIR=AT2G35960|UniProtKB=Q9SJ54	AT2G35960	NDR1/HIN1-like protein 12;NHL12;ortholog	Late embryogenesis abundant hydroxyproline-rich glycoprotein-related (PTHR31415:SF2)		Arabidopsis thaliana
+ARATH|TAIR=AT2G35000|UniProtKB=O64763	AT2G35000	E3 ubiquitin-protein ligase ATL9;ATL9;ortholog	E3 ubiquitin-protein ligase ATL9-related (PTHR14155:SF208)	ubiquitin-protein ligase(PC00234)	Arabidopsis thaliana
+ARATH|TAIR=AT5G48940|UniProtKB=C0LGV1	AT5G48940	LRR receptor-like serine/threonine-protein kinase RCH1;RCH1;ortholog	LRR receptor-like serine/threonine-protein kinase RCH1 (PTHR27000:SF290)		Arabidopsis thaliana
+ARATH|TAIR=AT4G19920|UniProtKB=F4JU09	AT4G19920	Toll-Interleukin-Resistance domain-containing protein;At4g19920;ortholog	Protein PHLOEM PROTEIN 2-LIKE A5-related (PTHR32009:SF34)		Arabidopsis thaliana
+ARATH|TAIR=AT1G59780|UniProtKB=Q9XIF0	AT1G59780	Putative disease resistance protein At1g59780;At1g59780;ortholog	Disease resistance RPP8-like protein 3-related (PTHR43886:SF8)		Arabidopsis thaliana
+ARATH|TAIR=AT4G01250|UniProtKB=O04609	AT4G01250	WRKY transcription factor 22;WRKY22;ortholog	WRKY transcription factor 22 (PTHR32096:SF35)		Arabidopsis thaliana
+ARATH|TAIR=AT5G45100|UniProtKB=Q9FHE4	AT5G45100	BOI-related E3 ubiquitin-protein ligase 1;BRG1;ortholog	BOI-related E3 ubiquitin-protein ligase 1-related (PTHR42647:SF12)		Arabidopsis thaliana
+ARATH|TAIR=AT2G17050|UniProtKB=F4IMF0	AT2G17050	TIR-NBS-LRR class disease resistance protein;At2g17050;ortholog	Disease resistance protein RRS1-related (PTHR32096:SF18)		Arabidopsis thaliana
+ARATH|TAIR=AT4G23220|UniProtKB=Q8H199	AT4G23220	Cysteine-rich receptor-like protein kinase 14;CRK14;ortholog	Cysteine-rich receptor-like protein kinase 10-related (PTHR27002:SF181)		Arabidopsis thaliana
+ARATH|TAIR=AT1G72840|UniProtKB=F4IEZ7	AT1G72840	TIR-NBS-LRR class disease resistance protein;At1g72840;ortholog	ATP binding protein-related (PTHR43904:SF1)		Arabidopsis thaliana
+ARATH|TAIR=AT1G79680|UniProtKB=Q8VYA3	AT1G79680	Wall-associated receptor kinase-like 10;WAKL10;ortholog	Wall-associated receptor kinase-like 1-related (PTHR27005:SF154)		Arabidopsis thaliana
+ARATH|TAIR=AT5G49140|UniProtKB=Q9FH20	AT5G49140	Disease resistance protein-like;At5g49140;ortholog	ATP binding protein-related (PTHR43904:SF1)		Arabidopsis thaliana
+ARATH|TAIR=AT1G58807|UniProtKB=F4IBE4	AT1G58807	Probable disease resistance protein RF45;RF45;ortholog	Disease resistance RPP8-like protein 3-related (PTHR43886:SF8)		Arabidopsis thaliana
+ARATH|TAIR=AT1G72930|UniProtKB=Q9SSN3	AT1G72930	Toll/interleukin-1 receptor-like protein;TIR;ortholog			Arabidopsis thaliana
+ARATH|TAIR=AT1G27180|UniProtKB=F4HR54	AT1G27180	TIR-NBS-LRR class disease resistance protein;At1g27180;ortholog	TIR-NBS-LRR class disease resistance protein-related (PTHR45170:SF2)		Arabidopsis thaliana
+ARATH|TAIR=AT5G45230|UniProtKB=Q9FKE2	AT5G45230	Disease resistance protein RPS4;At5g45230;ortholog	ATP binding protein-related (PTHR43904:SF1)		Arabidopsis thaliana
+ARATH|TAIR=AT5G65970|UniProtKB=Q9FKY5	AT5G65970	MLO-like protein 10;MLO10;ortholog	MLO-like protein 10-related (PTHR31942:SF49)		Arabidopsis thaliana
+ARATH|TAIR=AT2G46440|UniProtKB=Q9SKD6	AT2G46440	Cyclic nucleotide-gated ion channel 11;CNGC11;ortholog	Cyclic nucleotide-gated ion channel 11-related (PTHR10217:SF622)		Arabidopsis thaliana
+ARATH|TAIR=AT3G56710|UniProtKB=Q9LDH1	AT3G56710	Sigma factor binding protein 1, chloroplastic;SIB1;ortholog	Sigma factor binding protein 1, chloroplastic-related (PTHR33624:SF2)		Arabidopsis thaliana
+ARATH|TAIR=AT5G15380|UniProtKB=Q9LXE5	AT5G15380	DNA (cytosine-5)-methyltransferase DRM1;DRM1;ortholog	DNA (cytosine-5)-methyltransferase DRM1-related (PTHR23068:SF3)		Arabidopsis thaliana
+ARATH|TAIR=AT5G18350|UniProtKB=F4JWL7	AT5G18350	TIR-NBS-LRR class disease resistance protein;At5g18350;ortholog	ATP binding protein-related (PTHR43904:SF1)		Arabidopsis thaliana
+ARATH|TAIR=AT4G23280|UniProtKB=O65479	AT4G23280	Putative cysteine-rich receptor-like protein kinase 20;CRK20;ortholog	Cysteine-rich receptor-like protein kinase 10-related (PTHR27002:SF181)		Arabidopsis thaliana
