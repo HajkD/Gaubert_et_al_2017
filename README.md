@@ -277,7 +277,7 @@ fisher.test(ONSEN_insertion_enrichment)
 # retrieve A. thaliana GFF file
 biomartr::getGFF(organism = "Arabidopsis thaliana", db = "ensemblgenomes")
 
-# download bedops v2.4.26 https://github.com/bedops/bedops/releases
+# transform A thaliana GFF to BED format with bedops v2.4.26
 system(
         "gff2bed < _ncbi_downloads/annotation/Arabidopsis_thaliana.TAIR10.36_ensemblgenomes.gff3 > Arabidopsis_thaliana.TAIR10.36_ensemblgenomes.bed"
 )
@@ -320,6 +320,13 @@ names(Ath_bed_genes) <-
                 "attributes",
                 "width"
         )
+
+# join PANTHER retrieved enriched genes (defense response genes) with annotation file
+# to retrieve gene lengths for statistics
+pantherGeneList_joined_Annotation <- dplyr::inner_join(Ath_bed_genes, pantherGeneList, by = "gene")
+# total length of all 33 defense response genes that had new ONSEN insertions
+sum(pantherGeneList_joined_Annotation$width)
+# 113357 bp
 
 ```
 
