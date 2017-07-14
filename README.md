@@ -6,6 +6,11 @@ Gaubert H, Sanchez DH, Drost H-G and Paszkowski J. __Developmental restriction o
 - [bedtools v2.26.0](http://bedtools.readthedocs.io/en/latest/content/installation.html)
 - [bedops v2.4.26](https://github.com/bedops/bedops/releases)
 
+### Notes
+
+Please make sure that the [FUNCS.R](https://github.com/HajkD/Gaubert_et_al_2017/blob/master/FUNCS.R) file is
+in the same directory as the code stored in this README when executing the code.
+
 ### Statistical assessment of ONSEN insertion distributions
 
 ```r
