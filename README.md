@@ -333,6 +333,65 @@ pantherGeneList_joined_Annotation <- dplyr::inner_join(Ath_bed_genes, pantherGen
 sum(pantherGeneList_joined_Annotation$width)
 # 113357 bp
 
+# join all PANTHER retrieved defense response genes
+pantherGeneList_defense_response_all <-
+        readr::read_tsv("pantherGeneList_defense_response_all.txt", col_names = FALSE)
+names(pantherGeneList_defense_response_all)[2] <- "gene"
+
+# cleaning up gene ids
+pantherGeneList_defense_response_all <-
+        dplyr::mutate(
+                pantherGeneList_defense_response_all,
+                gene = stringr::str_replace(
+                        pantherGeneList_defense_response_all$gene,
+                        "ARATH[|]TAIR=",
+                        ""
+                )
+        )
+
+
+new_gene_id <-
+        unlist(lapply(pantherGeneList_defense_response_all$gene, function(x) {
+                return(unlist(stringr::str_split(x, "[|]"))[1])
+                
+        }))
+
+pantherGeneList_defense_response_all <-
+        dplyr::mutate(pantherGeneList_defense_response_all,
+                      gene = new_gene_id)
+
+# join all defense genes with Arabidopsis annotation file
+pantherGeneList_defense_response_all_joined_Annotation <-
+        dplyr::inner_join(Ath_bed_genes, pantherGeneList_defense_response_all, by = "gene")
+
+sum(pantherGeneList_defense_response_all_joined_Annotation$width)
+# [1] 2870509
+
+
+# length of all genes in bp
+sum(Ath_bed_genes$width)
+# [1] 67802825
+
+
+# Enrichment Analysis 
+defense_response_insertion_enrichment <-
+        matrix(c(
+                113357 / 1000, # reduce bp to Kbp
+                2870509 / 1000, # reduce bp to Kbp
+                2870509 / 1000, # reduce bp to Kbp
+                67802825 / 1000 # reduce bp to Kbp
+        ),
+        nrow = 2,
+        dimnames = list(
+                c("Total length of defense response genes with ONSEN insertions",
+                  "Total length of all defense response genes"),
+                c(
+                        "Defense response genes",
+                        "All genes"
+                )
+        ))
+
+chisq.test(defense_response_insertion_enrichment)
 ```
 
 
